@@ -35,12 +35,11 @@ class DefaultFogsChildThemePlugin extends ThemePlugin {
 			$this->removeOption('typography');
 		}
 
-		// Add the option for an accent color
-		$this->addOption('accentColour', 'FieldColor', [
-			'label' => __('plugins.themes.defaultFogs.option.accentColour.label'),
-			'description' => __('plugins.themes.default.option.colour.description'),
-			'default' => '#F7BC4A',
-		]);
+   	// Remove the Colour option of the parent theme.
+		// `removeOption` was introduced in OJS 3.0.2
+		if (method_exists($this, 'removeOption')) {
+			$this->removeOption('baseColour');
+		}
 
 		// Load the Montserrat and Open Sans fonts
 		$this->addStyle(
@@ -76,15 +75,6 @@ class DefaultFogsChildThemePlugin extends ThemePlugin {
 			if (!$this->isColourDark($this->getOption('baseColour'))) {
 				$additionalLessVariables[] = '@text-bg-base:rgba(0,0,0,0.84);';
 			}
-		}
-
-		// Update accent colour based on theme option
-		if ($this->getOption('accentColour') !== '#F7BC4A') {
-			$additionalLessVariables[] = '@accent:' . $this->getOption('accentColour') . ';';
-		}
-
-		if ($this->getOption('baseColour') && $this->getOption('accentColour')) {
-			$this->modifyStyle('stylesheet', array('addLessVariables' => join('', $additionalLessVariables)));
 		}
 	}
 
