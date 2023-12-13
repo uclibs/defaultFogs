@@ -11,6 +11,9 @@
  *       represents a page-level override, and doesn't indicate whether or not
  *       sidebars have been configured for thesite.
  *}
+  {* overide brand image with clips logo *}
+  {assign var=brandImage value="plugins/themes/defaultFogs/templates/images/journals_uc.png"}
+  {assign var=ucPressLogo value="plugins/themes/defaultFogs/templates/images/UC_Press_White.png"}
 
 	</div><!-- pkp_structure_main -->
 
@@ -40,12 +43,12 @@
 
       <div class="footer-logo journals">
         <a href={$baseUrl}>
-          <img class="footer-img" src="{$baseUrl}/templates/images/uc/journals_uc.png" alt="Journals @ UC logo">
+          <img class="footer-img" src="{$baseUrl}/{$brandImage}" alt="Journals @ UC logo">
         </a>
       </div>
       <div class="footer-logo">
         <a href="https://ucincinnatipress.uc.edu/">
-          <img class="img-responsive footer-img" src="{$baseUrl}/templates/images/uc/UC_Press_White.png" alt="University of Cincinnati Press logo">
+          <img class="img-responsive footer-img" src="{$baseUrl}/{$ucPressLogo}" alt="University of Cincinnati Press logo">
         </a>
       </div>
 		</div>
