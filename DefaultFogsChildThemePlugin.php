@@ -12,7 +12,7 @@
  *
  * @brief Default Fogs theme
  */
-namespace APP\plugins\themes\defaultFogs
+namespace APP\plugins\themes\defaultFogs;
 
 use PKP\plugins\ThemePlugin;
 
