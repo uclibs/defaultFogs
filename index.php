@@ -16,8 +16,6 @@
  *
  */
 
-require_once('DefaultFogsChildThemePlugin.inc.php');
-
-return new DefaultFogsChildThemePlugin();
+return new \APP\plugins\themes\defaultFogs\DefaultFogsChildThemePlugin();
 
 ?>

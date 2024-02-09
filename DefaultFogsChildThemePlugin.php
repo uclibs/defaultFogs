@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @file plugins/themes/default/DefaultFogsChildThemePlugin.inc.php
+ * @file plugins/themes/default/DefaultFogsChildThemePlugin.php
  *
  * Copyright (c) 2014-2020 Simon Fraser University
  * Copyright (c) 2003-2020 John Willinsky
@@ -10,9 +10,11 @@
  * @class DefaultFogsChildThemePlugin
  * @ingroup plugins_themes_default_fogs
  *
- * @brief Default theme
+ * @brief Default Fogs theme
  */
-import('lib.pkp.classes.plugins.ThemePlugin');
+namespace APP\plugins\themes\defaultFogs
+
+use PKP\plugins\ThemePlugin;
 
 class DefaultFogsChildThemePlugin extends ThemePlugin {
 	/**
